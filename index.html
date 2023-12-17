@@ -21,6 +21,7 @@
     <!-- Swiper-Js-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
+    <!--My CSS-->
     <link rel="stylesheet" href="assets/stylesheets/style.css">
 
 </head>
@@ -29,7 +30,7 @@
     <!--HEADER-->
     <header>
         <div class="nav container">
-            <div class="logo">KONGO.Café</div>
+            <div class="logo"><a href="#home">KONGO.Café</a></div>
             <div class="navbar">
                 <a href="#home" class="navlink">Home</a>
                 <a href="#services" class="navlink" >Services</a>
@@ -40,6 +41,11 @@
             <div class="nav-icons">
                 <a href="#"><i class="bx bx-user"></i></a>
                 <a href="#"><i class="bx bx-shopping-bag"></i></a>
+            </div>
+            <div class="menu-icon">
+                <div class="line-1"></div>
+                <div class="line-2"></div>
+                <div class="line-3"></div>
             </div>
         </div>
     </header>
@@ -63,7 +69,7 @@
         <!--SERVICES SECTION-->
         <section class="service container" id="services">
             <h1 class="title service-title">Blendind culture, coffee & top notch services</h1>
-            <div class="content">
+            <div class="service-content content">
                 <div class="service-card">
                     <img src="assets/images/ser-1.png" alt="">
                     <h3>Equipment</h3>
@@ -246,9 +252,79 @@
               <div class="swiper-pagination"></div>
             </div>
         </section>
+
+        <!--BOOK SECTION-->
+        <section class="book container" id="book">
+            <img src="assets/images/book.jpg" alt="">
+            <div class="overlay"></div>
+            <div class="book-data">
+                <h1 class="title">Let's book a table <br> for you !</h1>
+                <form>
+                    <div class="input-box">
+                        <i class="bx bx-phone-call"></i>
+                        <input type="tel" placeholder="Your number">
+                    </div>
+                    <div class="input-box">
+                        <i class="bx bx-user"></i>
+                        <input type="number" placeholder="People">
+                    </div>
+                    <a href="#" class="btn book-btn">Book table</a>
+                </form>
+                <p>We will contact you to confirm your booking</p>
+            </div>
+        </section>
+
     </main>
-  
+    <footer>
+        <!--FOOTER SECTION-->
+        <section class="footer container" id="footer">
+            <div class="footer-part">
+                <div class="logo"><a href="#home">KONGO.Café</a></div>
+                <div class="social-media">
+                    <i class="bx bxl-twitch bx-md"></i>
+                    <i class="bx bxl-twitter bx-md"></i>
+                    <i class="bx bxl-linkedin bx-md"></i>
+                    <i class="bx bxl-youtube bx-md"></i>
+                </div>
+            </div>
+            <div class="footer-part">
+                <h3 class="part-title">About</h3>
+                <ul>
+                    <li><a href="#">Our story</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-part">
+                <h3 class="part-title">Customer's resources</h3>
+                <ul>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">Location</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-part">
+                <h3 class="part-title">Services</h3>
+                <ul>
+                    <li><a href="#">Payment options</a></li>
+                    <li><a href="#">Refunds & exchange</a></li>
+                    <li><a href="#">Limitation of liability</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!--COPYRIGHT-->
+        <section class="copyright">
+            <p>&copy;<a href="#">KONGO.Café</a>; All rights reserved</p>
+        </section>
+    </footer>
+    <!--Scrool Reveal-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--Swiper Js-->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- My JS -->
     <script src="assets/js/script.js"></script>
     
 </body>
