@@ -9,6 +9,7 @@
     scroll-padding-top: 3rem;
     box-sizing: border-box;
     font-family: $ff-2;
+    list-style: none;
 }
 
 body {
@@ -18,6 +19,7 @@ body {
 }
 a {
     text-decoration: none;
+    color: inherit;
 }
 img {
     width: 100%;
@@ -38,11 +40,13 @@ section {
     margin: 8px 0;
     border-radius: 3rem;
 }
+.btn {
+    @extend %btn;
+}
 .title {
     font-size: 3.5rem;
     font-weight: $fw-800;
 }
-
 /*HEADER*/
 header {
     position: fixed;
@@ -62,6 +66,9 @@ header {
     font-size: 1.4rem;
     font-weight: $fw-700;
     color: $container-color;
+    &:hover {
+        cursor: pointer;
+    }
 }
 .navbar {
     display: flex;
@@ -84,12 +91,15 @@ header {
     gap: 18px;
     font-size: 20px;
     a {
-        color: $text-alter-color;
+        color: $bg-color;
         transition: $transition-1;
         &:hover {
             color: $container-color;
         }
     }
+}
+.menu-icon {
+    display: none;
 }
 /*HOME SECTION*/
 
@@ -199,6 +209,13 @@ header {
             color: rgb(216, 16, 50);
             margin-top: 15px;
             margin-left: 10px;
+            padding: 4px;
+            transition: $transition-1;
+            &:hover {
+                border-radius: 50%;
+                background-color: pink;
+                cursor: pointer;
+            }
         }
         .card-content {
             display: flex;
@@ -210,6 +227,8 @@ header {
                 width: 150px;
                 border-radius: 50%;
                 margin-bottom: 15px;
+                object-fit: cover;
+                object-position: center;
             }
             .sm-description {
                 padding: 4px 8px;
@@ -344,4 +363,315 @@ header {
     width: 1.5rem;
     background-color: $second-color !important;
     transition: $transition-1;
+}
+
+/* BOOK SECTION */
+.book {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $bg-color;
+    padding: 40px 20px;
+    margin-bottom: 100px;
+    img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 1rem;
+        z-index: -1;
+    }
+}
+.overlay {
+    content: '';
+    position: absolute;
+    border-radius: 1rem;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+.book-data {
+    .title {
+        text-align: center;
+        text-transform: capitalize;
+    }
+    form {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        gap: 8px;
+        padding: 17px 28px;
+        border-radius: 3rem;
+        background-color: white;
+        i {
+            color: black;
+        }
+    }
+    p {
+        text-align: center;
+        font-size: 0.875rem;
+        font-family: $ff-poppins;
+        font-weight: $fw-500;
+        margin-top: 15px;
+    }
+}
+.input-box {
+    display: flex;
+    align-items: center;
+    input {
+        padding: 5px 8px;
+        border: none;
+        outline: none;
+        font-family: $ff-poppins;
+        font-size: 1.075rem;
+    }
+}
+.book-btn {
+    margin: 0;
+    background-color: $main-color;
+    color: $bg-color;
+    transition: $transition-1;
+    &:hover {
+        background-color: $second-color;
+    }
+}
+
+/* FOOTER SECTION */
+.footer {
+    display: grid;
+    grid-template-columns: 1.2fr 0.6fr 1.2fr 1fr;
+    color: $main-color;
+    gap: 35px;
+    line-height: 2.3;
+}
+
+.footer-part {
+    .logo {
+        margin-bottom: 25px;
+        color: $main-color;
+    }
+    .social-media i{
+        align-items: center;
+        row-gap: 15px;
+        transition: $transition-1;
+        &:hover {
+            color: $second-color;
+            cursor: pointer;
+        }
+    }
+    a {
+        transition: $transition-1; 
+        &:hover {
+            color: $second-color;
+        }
+    }
+    .part-title {
+        font-weight: $fw-700;
+    }
+}
+
+.copyright {
+    background-color: $main-color;
+    margin-top: 35px;
+    text-align: center;
+    padding: 20px 8px;
+    p {
+        color: $bg-color;
+        a {
+            color: $second-color;
+        }
+    }
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 1080px) {
+    .container {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .product-body {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 40px;
+    }
+}
+
+@media screen and (max-width: 875px) {
+    section {
+        padding: 2rem 0;
+    }
+    .title {
+        font-size: 2.5rem;
+    }
+    .service {
+        .content {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    .team-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .home {
+        min-height: 500px;
+        grid-template-columns: 1fr;
+        margin-top: 4.5rem;
+        .title {
+            font-size: 2.5rem;
+        }
+        .left-content {
+            order: 1;
+        }
+    }
+    .title {
+        font-size: 1.6rem;
+    }
+    .product-body {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .book {
+        padding: 20px;
+    }
+    .book-data {
+        margin-top: 3rem;
+        max-width: 350px;
+        flex-direction: column;
+        width: 100%;
+        form {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            align-items: center;
+            flex-wrap: wrap;
+            border-radius: 8px;
+            .input-box {
+                border-bottom: 2px solid $main-color;
+                margin-bottom: 15px;
+            }
+        }
+        a {
+            width: 100%;
+            text-align: center;
+            font-family: $ff-poppins
+        }
+    }
+    .footer {
+        grid-template-columns: repeat(3, auto);
+    }
+}
+@media screen and (max-width: 700px) {
+    header {
+        top: 15px;
+    }
+    .nav {
+        padding: 14px 28px ;
+        justify-content: center;
+        gap: 25px;
+    }
+    .logo {
+        font-size: 1.25rem;
+        margin-right: 20%;
+    }
+    .menu-icon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        row-gap: 5px;
+        z-index: 5;
+        cursor: pointer;
+        div {
+            display: block;
+            background-color: $bg-color;
+            height: 2px;
+            width: 23px;
+            transition: $transition-1;
+        }
+    }
+    
+    .move .line-1 {
+        transform: rotate(-45deg) translate(-5px, 5px);
+    }
+    .move .line-2 {
+        opacity: 0;
+    }
+    .move .line-3 {
+        transform: rotate(45deg) translate(-5px, -5px);
+    }
+    .navbar {
+        position: absolute;
+        top: 110%;
+        left: 50%;
+        transform: translate(-50%);
+        width: 90vw;
+        background-color: $text-color;
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        border-radius: 1rem;
+        text-align: center;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: $transition-2;
+        .navlink {
+            display: block;
+            margin: 0.4rem 0;
+        }
+    }
+    .open-navbar {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        transition: $transition-2;
+    }
+}
+@media screen and (max-width: 500px) {
+    .service {
+        .content {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    .product-body {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+    .team-content {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+    .footer {
+        grid-template-columns: 1fr;
+        text-align: center;
+        line-height: 2.5;
+        ul li{
+            line-height: 2.5;
+        }
+        .logo {margin: 15px 0%;}
+    }
+}
+@media screen and (max-width: 380px) {
+    header {
+        .logo {
+            margin-right: 0;
+        }
+    }
+    .service {
+        .content {
+            grid-template-columns: repeat(auto-fit, minmax(auto, 140px));
+            justify-content: center;
+        }
+        .service-card {
+            margin-inline: auto;
+        }
+    }
+    .input-box {
+        input {
+            width: 100%;
+        }
+    }
+    .card-review .theme{
+        font-size: .975rem;
+    }
 }
